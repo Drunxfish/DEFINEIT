@@ -10,21 +10,55 @@
 
 :root {
     --background: #fdd70b;
-    --backgroundSecondary: #111;
+    --backgroundSecondary: #fffcdc;
     --cozyBackground: #252525;
-    --text: #292929;
     --textSecondary: #fffcdc;
+    --white: #fff;
+    --red: #ff5050;
+    --green: #7cff7c;
+    --div: #222222;
+    --purp: #51518e;
+}
+
+.dark-mode {
+    --background: #ff5050;
+    --backgroundSecondary: var(--cozyBackground);
+    --cozyBackground: #252525;
+    --text: #fffcdc;
     --white: #fff;
     --red: #ee211e;
     --green: #7cff7c;
+    --bgDark: URL(./../images/bgDark.png);
+    --bgContainer: #292929;
+    --div: #222222;
 }
 
 html {
+    ::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--div);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--background);
+        border-radius: 10px;
+        border: 2.5px solid var(--div);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--backgroundSecondary);
+    }
+
     scroll-behavior: smooth;
-    transition: .2s ease-in-out;
     background-image: url(./../images/bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
 
     body {
         header {
@@ -33,27 +67,66 @@ html {
             justify-content: center;
             align-items: center;
             width: 100%;
-            height: 100px;
+            height: 80px;
             background-color: var(--background);
-            color: var(--text);
+            color: var(--div);
             font-size: 30px;
             font-weight: bold;
             text-transform: uppercase;
             text-align: center;
             position: relative;
 
-            img {
+
+            .themeMode {
                 position: absolute;
-                left: 20px;
+                right: 20px;
                 top: 10px;
-                width: 80px;
-                height: 80px;
-                padding: 2vh;
+                width: 60px;
+                height: 60px;
+                padding: .5vh;
                 border-radius: 20px;
                 background-color: var(--cozyBackground);
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+                border: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+
+                span {
+                    scale: 1.5;
+                    color: var(--textSecondary);
+                }
+
+                &:active {
+                    transform: scale(0.9);
+                }
             }
 
+            .logo {
+                position: absolute;
+                left: 20px;
+                top: 10px;
+                width: 60px;
+                height: 60px;
+                padding: .5vh;
+                border-radius: 20px;
+                background-color: var(--cozyBackground);
+                color: var(--textSecondary);
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+                border: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+
+                span {
+                    scale: 1.5;
+                    color: var(--textSecondary);
+                }
+            }
         }
 
         /* Main container */
@@ -64,28 +137,23 @@ html {
             flex-direction: column;
 
             .contain {
-                margin: 4vh 0;
+                margin: 10vh 0;
                 display: flex;
-                /* justify-content: center; */
                 flex-direction: column;
                 gap: 2vh;
                 width: 550px;
-                background-image: url(./../images/container.png);
-                background-size: contain;
+                background-color: var(--textSecondary);
 
                 border-radius: 10px;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                transition: 1s ease-in-out;
                 color: #ffffff;
                 position: relative;
                 overflow: hidden;
                 padding: 30px 30px;
                 height: 120px;
-                /* height: 800px; */
-                /* overflow-y: auto; */
                 transition: .5s ease-in-out;
 
-                /* Search box styling  */
+                /* Search box  */
                 .search {
                     background-color: var(--cozyBackground);
                     width: 100%;
@@ -120,8 +188,9 @@ html {
                     }
 
                     button {
+                        transition: .1s ease-in-out;
                         background: var(--background);
-                        color: var(--text);
+                        color: var(--div);
                         cursor: pointer;
                         width: 50px;
                         height: 50px;
@@ -135,8 +204,8 @@ html {
                         }
 
                         &:hover {
-                            background: var(--backgroundSecondary);
-                            color: var(--background);
+                            background: var(--purp);
+                            color: var(--white);
                         }
 
                         &:active {
@@ -152,7 +221,7 @@ html {
                     align-items: center;
                     flex-direction: column;
                     border-radius: inherit;
-                    color: var(--text);
+                    color: var(--div);
 
                     /* Definition display */
                     .def {
@@ -172,7 +241,7 @@ html {
 
                             .audioBtn {
                                 background: var(--white);
-                                color: var(--text);
+                                color: var(--div);
                                 cursor: pointer;
                                 width: 50px;
                                 height: 50px;
@@ -208,7 +277,7 @@ html {
 
 
                         div {
-                            background-color: var(--text);
+                            background-color: var(--div);
                             color: var(--textSecondary);
                             padding: 3vh;
                             border-radius: .5vh;
@@ -225,13 +294,14 @@ html {
                     }
 
                     .not-found {
+                        user-select: none;
                         display: none;
                         align-items: center;
                         flex-direction: column;
                         justify-content: center;
                         height: 90%;
                         gap: 2vh;
-                        color: var(--text);
+                        color: var(--div);
                         text-align: center;
                         white-space: pre-wrap;
                         width: 100%;
@@ -256,6 +326,63 @@ html {
     }
 }
 
+
+
+html.dark-mode {
+    background-image: var(--bgDark);
+
+    header {
+
+        button,
+        img {
+            background-color: var(--cozyBackground);
+            color: var(--text);
+        }
+    }
+
+    .container {
+
+        .contain {
+            background-color: var(--bgContainer);
+            color: var(--text);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+            .search {
+                background-color: var(--white);
+
+                input {
+                    color: var(--div);
+                }
+            }
+
+            div {
+                background: none;
+            }
+
+            .display {
+                .def {
+                    div {
+                        background-color: var(--div);
+                    }
+
+                    .word-info {
+                        .audioBtn {
+                            color: var(--div);
+                        }
+                    }
+                }
+
+                .not-found {
+                    color: var(--white);
+                }
+            }
+        }
+    }
+}
+
+
+
+
 .fade-in {
     animation: .5s fadeIn forwards;
     animation-delay: .3s;
@@ -268,4 +395,39 @@ html {
         scale: 1;
         opacity: 1;
     }
+}
+
+
+
+@media screen and (max-width: 900px) {
+    html {
+        body {
+            header {
+                font-size: 15px;
+
+                .themeMode,
+                .logo {
+                    width: 50px;
+                    height: 50px;
+                    padding: 0;
+                    border-radius: 10px;
+
+                    span {
+                        scale: 1;
+                    }
+                }
+            }
+
+            .container {
+                width: 100%;
+
+                .contain {
+                    width: 100%;
+                    height: fit-content !important;
+                }
+            }
+        }
+
+    }
+
 }

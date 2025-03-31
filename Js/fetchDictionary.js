@@ -43,7 +43,7 @@ async function fetchDictionary() {
         // Display Container
         defContainer.style.display = 'flex';
         defContainer.classList.add('fade-in')
-        disp.style.marginBottom = '40vh';
+        // disp.style.marginBottom = '30vh';
 
 
         //////////////// Display word ///////////////
@@ -103,6 +103,10 @@ async function fetchDictionary() {
         notFound.style.display = 'block';
         notFound.classList.add('fade-in');
         disp.style.marginBottom = '0';
+    } finally{
+        setTimeout(() => {
+            container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 500);
     }
 }
 

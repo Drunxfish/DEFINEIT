@@ -1,0 +1,1 @@
+document.querySelector('.themeMode').addEventListener('click', () => { document.querySelector('.themeMode span').textContent = document.querySelector('html').classList.toggle('dark-mode') ? 'light_mode' : 'nights_stay'; });
