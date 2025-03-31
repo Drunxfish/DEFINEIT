@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEFINEIT</title>
+    <link rel="icon" href="./../public/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./../public/style/style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&&display=swap" />
+    <script src="./../Js/fetchDictionary.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <img src="./../public/images/logoW.png" alt="logo">
+        <h1>Define</h1>
+        <span>It</span>
+    </header>
+    <div class="container">
+        <div class="contain">
+            <div class="srch">
+                <div class="search">
+                    <input type="text" placeholder="Hit me with a word!..." class="searchInput">
+                    <button type="submit" class="initSearch">
+                        <span class="material-symbols-outlined loc">
+                            search
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="display">
+                <div class="def">
+                    <div class="word-info">
+                    </div>
+                    <div class="definitions">
+                        <h3>📜 Definition(s):</h3>
+                        <ul class="defins"></ul>
+                    </div>
+                    <div class="part-of-speech">
+                        <h3 class="prtSpeech"></h3>
+                    </div>
+                    <div class="examples">
+                    </div>
+                    <div class="synonyms-antonyms">
+                    </div>
+                </div>
+                <div class="not-found">
+                    <img src="./../public/images/search-book.png" alt="404">
+                    <h3>Sorry pal, we couldn't find definitions for the word you were looking for.</h3>
+                    <h3>Try searching for another word</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
