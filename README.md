@@ -3,7 +3,7 @@
 DEFINEIT is a simple dictionary web app that allows users to search for English words and get their definitions, phonetics, synonyms, antonyms, and example usage. It seamlessly integrates an API-based dictionary lookup with a clean and user-friendly interface.  
 
 ## 🔍 DEFINEIT Demo  
-....
+![DEFINEIT Demo](public/images/preview.gif)
 
 
 ## 🛠 Features  
