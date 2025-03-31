@@ -61,6 +61,7 @@ html {
     min-height: 100vh;
 
     body {
+        /* max-height: 100vh; */
         header {
             user-select: none;
             display: flex;
@@ -141,7 +142,7 @@ html {
                 display: flex;
                 flex-direction: column;
                 gap: 2vh;
-                width: 550px;
+                width: 600px;
                 background-color: var(--textSecondary);
 
                 border-radius: 10px;
