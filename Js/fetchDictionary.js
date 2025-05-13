@@ -6,21 +6,16 @@ const notFound = document.querySelector('.not-found');
 const searchBtn = document.querySelector('.initSearch');
 const searchInp = document.querySelector('.searchInput');
 const wordInfo = document.querySelector('.word-info');
-
-
 // Elements
 const definitions = document.querySelector('.defins')
 const partOfSpeech = document.querySelector('.prtSpeech');
 const examples = document.querySelector('.examples');
 const synAt = document.querySelector('.synonyms-antonyms');
 
-
 // Handle API request/display
 async function fetchDictionary() {
     // Stops execution
     if (searchInp.value === '') return;
-
-
     try {
         // REQUEST API
         const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${searchInp.value.toLowerCase()}`);
@@ -39,12 +34,10 @@ async function fetchDictionary() {
         notFound.classList.remove('fade-in');
         notFound.style.display = 'none';
 
-
         // Display Container
         defContainer.style.display = 'flex';
         defContainer.classList.add('fade-in')
         // disp.style.marginBottom = '30vh';
-
 
         //////////////// Display word ///////////////
         // Safe assign audio source
@@ -55,7 +48,7 @@ async function fetchDictionary() {
                 break;
             }
         }
-
+        
         // Display Main word/Pronunciation/Audio
         wordInfo.innerHTML = `
             <h2>📖 Main Word: ${data[0]['word'].charAt(0).toUpperCase() + data[0]['word'].slice(1)}</h2>
@@ -77,26 +70,16 @@ async function fetchDictionary() {
             document.querySelector('#audio').play();
         });
 
-
-        // Display definitions
+        // Display Data
         definitions.innerHTML = `${data[0]['meanings'][0]['definitions'].map(def => `<li>${def.definition}</li>`).join('')}`;
-
-
-        // Display part of speech
         partOfSpeech.innerHTML = `🔠 Part of Speech: ${data[0]['meanings'][0]['partOfSpeech'].charAt(0).toUpperCase() + data[0]['meanings'][0]['partOfSpeech'].slice(1)}`;
-
-        // Display examples
         examples.innerHTML = `<h3>💬 Example Sentence(s):</h3>
         ${data[0]['meanings'][1]?.['definitions']?.map(exp => exp['example'] ? `<li>"${exp['example']}"</li>` : '').join('') || 'N/A'}`;
-
-
-        // Display synonyms and antonyms
         synAt.innerHTML = `
         <h3>🔗 synonyms-antonyms: </h3>
         <p>✅ Synonyms: ${data[0]['meanings'][0]['synonyms'].length > 0 ? data[0]['meanings'][0]['synonyms'].map(syn => `${syn}`).join(', ') : 'N/A'}</p>
         <p>❌ Antonyms: ${data[0]['meanings'][0]['antonyms'].length > 0 ? data[0]['meanings'][0]['antonyms'].map(ant => `${ant}`).join(', ') : 'N/A'}</p>`;
-
-        // Display error view
+    // Display error view
     } catch (error) {
         defContainer.style.display = 'none';
         defContainer.classList.remove('fade-in');
@@ -110,8 +93,7 @@ async function fetchDictionary() {
     }
 }
 
-
-// Search Dictionary on click or enter key
+// Search Dictionary on MB1 or enter key
 searchBtn.addEventListener('click', fetchDictionary);
 document.addEventListener('keypress', e => e.key === 'Enter' && fetchDictionary());
 

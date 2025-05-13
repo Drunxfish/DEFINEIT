@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
-
 * {
     transition: .5s ease-in-out;
     margin: 0;
@@ -7,7 +6,6 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-
 :root {
     --background: #fdd70b;
     --backgroundSecondary: #fffcdc;
@@ -19,7 +17,6 @@
     --div: #222222;
     --purp: #51518e;
 }
-
 .dark-mode {
     --background: #ff5050;
     --backgroundSecondary: var(--cozyBackground);
@@ -32,26 +29,21 @@
     --bgContainer: #292929;
     --div: #222222;
 }
-
-html {
+    html {
     ::-webkit-scrollbar {
         width: 12px;
     }
-
     ::-webkit-scrollbar-track {
         background: var(--div);
     }
-
     ::-webkit-scrollbar-thumb {
         background: var(--background);
         border-radius: 10px;
         border: 2.5px solid var(--div);
     }
-
     ::-webkit-scrollbar-thumb:hover {
         background: var(--backgroundSecondary);
     }
-
     scroll-behavior: smooth;
     background-image: url(./../images/bg.png);
     background-repeat: no-repeat;
@@ -76,8 +68,6 @@ html {
             text-transform: uppercase;
             text-align: center;
             position: relative;
-
-
             .themeMode {
                 position: absolute;
                 right: 20px;
@@ -94,7 +84,6 @@ html {
                 justify-content: center;
                 align-items: center;
                 transition: background-color 0.3s ease, transform 0.2s ease;
-
                 span {
                     scale: 1.5;
                     color: var(--textSecondary);
@@ -104,7 +93,6 @@ html {
                     transform: scale(0.9);
                 }
             }
-
             .logo {
                 position: absolute;
                 left: 20px;
@@ -122,21 +110,18 @@ html {
                 justify-content: center;
                 align-items: center;
                 transition: background-color 0.3s ease, transform 0.2s ease;
-
                 span {
                     scale: 1.5;
                     color: var(--textSecondary);
                 }
             }
         }
-
         /* Main container */
         .container {
             display: flex;
             flex-direction: column;
             align-items: center;
             flex-direction: column;
-
             .contain {
                 margin: 10vh 0;
                 display: flex;
@@ -144,7 +129,6 @@ html {
                 gap: 2vh;
                 width: 600px;
                 background-color: var(--textSecondary);
-
                 border-radius: 10px;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
                 color: #ffffff;
@@ -153,7 +137,6 @@ html {
                 padding: 30px 30px;
                 height: 120px;
                 transition: .5s ease-in-out;
-
                 /* Search box  */
                 .search {
                     background-color: var(--cozyBackground);
@@ -165,7 +148,6 @@ html {
                     border-radius: 1vh;
                     padding: 1vh;
                     position: relative;
-
                     input {
                         color: var(--white);
                         background: none;
@@ -177,17 +159,14 @@ html {
                         text-transform: uppercase;
                         padding-left: 65px;
                         scale: 1;
-
                         &::placeholder {
                             font-weight: bold;
                         }
-
                         &:focus {
                             outline: none;
                             scale: 1.05;
                         }
                     }
-
                     button {
                         transition: .1s ease-in-out;
                         background: var(--background);
@@ -197,24 +176,20 @@ html {
                         height: 50px;
                         border-radius: 50%;
                         border: none;
-
                         span {
                             margin: auto;
                             font-weight: bolder;
                             padding: 5px 8px;
                         }
-
                         &:hover {
                             background: var(--purp);
                             color: var(--white);
                         }
-
                         &:active {
                             transform: scale(0.9);
                         }
                     }
                 }
-
                 .display {
                     width: 100%;
                     height: 100%;
@@ -223,7 +198,6 @@ html {
                     flex-direction: column;
                     border-radius: inherit;
                     color: var(--div);
-
                     /* Definition display */
                     .def {
                         margin-top: 2vh;
@@ -234,12 +208,10 @@ html {
                         gap: 2vh;
                         scale: 0;
                         opacity: 0;
-
                         .word-info {
                             display: flex;
                             flex-direction: column;
                             position: relative;
-
                             .audioBtn {
                                 background: var(--white);
                                 color: var(--div);
@@ -252,39 +224,31 @@ html {
                                 position: absolute;
                                 top: 35%;
                                 right: 3%;
-
                                 span {
                                     margin: auto;
                                     font-weight: bolder;
                                     padding: 5px 8px;
                                 }
-
                                 &:hover {
                                     background: var(--green);
                                 }
-
                                 &:active {
                                     transform: scale(0.9);
                                 }
                             }
                         }
-
                         h2,
                         h3 {
                             margin-bottom: 1vh;
                             font-size: 25px;
                             color: var(--white);
                         }
-
-
                         div {
                             background-color: var(--div);
                             color: var(--textSecondary);
                             padding: 3vh;
                             border-radius: .5vh;
                         }
-
-
                         .part-of-speech {
                             .prtSpeech {
                                 font-size: 20px;
@@ -293,7 +257,6 @@ html {
                             }
                         }
                     }
-
                     .not-found {
                         user-select: none;
                         display: none;
@@ -308,12 +271,10 @@ html {
                         width: 100%;
                         scale: 0;
                         opacity: 0;
-
                         img {
                             width: 70%;
                             margin-left: -5vh;
                         }
-
                         h3:nth-child(3) {
                             font-size: 20px;
                             font-weight: 400;
@@ -331,23 +292,18 @@ html {
 
 html.dark-mode {
     background-image: var(--bgDark);
-
     header {
-
         button,
         img {
             background-color: var(--cozyBackground);
             color: var(--text);
         }
     }
-
     .container {
-
         .contain {
             background-color: var(--bgContainer);
             color: var(--text);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
             .search {
                 background-color: var(--white);
 
@@ -355,11 +311,9 @@ html.dark-mode {
                     color: var(--div);
                 }
             }
-
             div {
                 background: none;
             }
-
             .display {
                 .def {
                     div {
@@ -372,7 +326,6 @@ html.dark-mode {
                         }
                     }
                 }
-
                 .not-found {
                     color: var(--white);
                 }
@@ -381,15 +334,10 @@ html.dark-mode {
     }
 }
 
-
-
-
 .fade-in {
     animation: .5s fadeIn forwards;
     animation-delay: .3s;
 }
-
-
 
 @keyframes fadeIn {
     to {
@@ -397,7 +345,6 @@ html.dark-mode {
         opacity: 1;
     }
 }
-
 
 
 @media screen and (max-width: 900px) {
@@ -418,7 +365,6 @@ html.dark-mode {
                     }
                 }
             }
-
             .container {
                 width: 100%;
 
