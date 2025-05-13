@@ -1,3 +1,10 @@
+```shell
+⚠️ Disclaimer
+This project was made long ago while I was practicing
+DOM manipulation and working with APIs.
+It may not follow best practices as it was mainly for learning purposes.
+```
+
 # 📖 DEFINEIT - Dictionary Web App  
 
 DEFINEIT is a simple dictionary web app that allows users to search for English words and get their definitions, phonetics, synonyms, antonyms, and example usage. It seamlessly integrates an API-based dictionary lookup with a clean and user-friendly interface.  
